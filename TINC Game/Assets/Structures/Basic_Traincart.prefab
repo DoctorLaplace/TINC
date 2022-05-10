@@ -174,13 +174,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4467047530325945954}
     m_Modifications:
+    - target: {fileID: -3121768328461700965, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
+      propertyPath: is_immortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
       propertyPath: m_InstanceId
-      value: -1195714
+      value: -364390
       objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
       propertyPath: m_HasRenderer
@@ -291,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_InstanceId
-      value: -1195722
+      value: -364398
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_HasRenderer
@@ -385,8 +389,8 @@ FixedJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1246287680720187588}
-  m_BreakForce: 50000
-  m_BreakTorque: 50000
+  m_BreakForce: 500000
+  m_BreakTorque: 500000
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.28571424, y: 10.5}
@@ -405,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_InstanceId
-      value: -1195732
+      value: -364408
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_HasRenderer
@@ -494,8 +498,8 @@ FixedJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1246287681136796527}
-  m_BreakForce: 50000
-  m_BreakTorque: 50000
+  m_BreakForce: 500000
+  m_BreakTorque: 500000
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.46666667, y: -3.5}
@@ -611,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_InstanceId
-      value: -1195746
+      value: -364422
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_HasRenderer
@@ -705,8 +709,8 @@ FixedJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1246287680720187588}
-  m_BreakForce: 50000
-  m_BreakTorque: 50000
+  m_BreakForce: 500000
+  m_BreakTorque: 500000
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.2857143, y: 10.5}
@@ -719,13 +723,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4467047530325945954}
     m_Modifications:
+    - target: {fileID: -3121768328461700965, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
+      propertyPath: is_immortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
       propertyPath: m_InstanceId
-      value: -1195756
+      value: -364432
       objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: 420fe0ea02f76634696b08ca8a1651b9, type: 3}
       propertyPath: m_HasRenderer
@@ -836,7 +844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_InstanceId
-      value: -1195764
+      value: -364440
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_HasRenderer
@@ -949,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: f796742bba3875d4b806f3c61222cc07, type: 3}
       propertyPath: m_InstanceId
-      value: -1195772
+      value: -364448
       objectReference: {fileID: 0}
     - target: {fileID: 618310377033701364, guid: f796742bba3875d4b806f3c61222cc07, type: 3}
       propertyPath: m_Name
@@ -1050,7 +1058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_InstanceId
-      value: -1195784
+      value: -364460
       objectReference: {fileID: 0}
     - target: {fileID: -2834452785567132385, guid: 516b91cad914be840bcea4c5d93ef81c, type: 3}
       propertyPath: m_HasRenderer
@@ -1139,8 +1147,8 @@ FixedJoint2D:
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 1246287679410092458}
-  m_BreakForce: 50000
-  m_BreakTorque: 50000
+  m_BreakForce: 500000
+  m_BreakTorque: 500000
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.46666667, y: -3.5}
@@ -1163,7 +1171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -671503386213225261, guid: f796742bba3875d4b806f3c61222cc07, type: 3}
       propertyPath: m_InstanceId
-      value: -1195792
+      value: -364468
       objectReference: {fileID: 0}
     - target: {fileID: 618310377033701364, guid: f796742bba3875d4b806f3c61222cc07, type: 3}
       propertyPath: m_Name

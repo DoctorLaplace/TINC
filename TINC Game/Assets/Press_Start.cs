@@ -31,6 +31,7 @@ public class Press_Start : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
+            FindObjectOfType<AudioManager>().Play("Button_Pressed");
             SceneManager.LoadScene("Level_1");
         }
 

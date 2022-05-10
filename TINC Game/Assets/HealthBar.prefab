@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slide: {fileID: 5561039709854648821}
-  player: {fileID: 6189407803715680888, guid: 81c5e6872b4632d4c99e25b77268f346, type: 3}
+  player: {fileID: 2548630010521631367, guid: 4de4ffca0806bd746bc06ccef569fc75, type: 3}
   gradient:
     serializedVersion: 2
     key0: {r: 0.9622642, g: 0, b: 0, a: 1}

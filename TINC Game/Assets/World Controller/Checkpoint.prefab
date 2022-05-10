@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 37e72e304f6f74743949925ce978eee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -122,14 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d8769cad9f32247ba95b02f08f7a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnDelay: 0
-  controller: {fileID: 0}
-  delay: {fileID: 0}
   redFlag: {fileID: 21300000, guid: 37e72e304f6f74743949925ce978eee7, type: 3}
   greenFlag: {fileID: 21300000, guid: e5f97bcf11ebfff4793ae5e5bf6b975e, type: 3}
   checkpointreached: 0
   respawnpoint: {x: 0, y: 0, z: 0}
   fallDetector: {fileID: 0}
+  player: {fileID: 0}
   worldController: {fileID: 0}
   worldCamera: {fileID: 0}
-  weaponUI: {fileID: 0}
+  levelManager: {fileID: 0}
