@@ -98,3 +98,27 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: ShotgunPickUp
+    clip: {fileID: 8300000, guid: aca93ee4cd610974995d5cefe02e6271, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GrenadePickUp
+    clip: {fileID: 8300000, guid: c856a23440f08cf4abbc289cbebc706f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: RocketPickUp
+    clip: {fileID: 8300000, guid: 7498d23c169931545a357f9835fb4394, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: RiflePickUp
+    clip: {fileID: 8300000, guid: 06063e774f9c8aa429a7a7f45dad5ec3, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

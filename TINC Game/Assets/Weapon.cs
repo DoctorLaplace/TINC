@@ -31,11 +31,14 @@ public class Weapon : MonoBehaviour
 
     //ROCKET LAUNCHER CODE
     public GameObject rocketPrefab;
-    private float rpgFireRate = 0.35f;
+    private float rpgFireRate = 0.5f;
+    public GameObject RPGMuzzleFlashObject;
+    
 
     //SHOTGUN CODE
     private float shotgunFireRate = 0.8f;
     public GameObject pellet;
+    public GameObject ShotgunMuzzleFlashObject;
 
     //GRENADE CODE
     private float grenadeThrowRate = 0.75f;
@@ -47,6 +50,8 @@ public class Weapon : MonoBehaviour
     public Animator RPGAnimator;
     public Animator ShotgunAnimator;
     public Animator MuzzleFlash;
+    public Animator RPGMuzzleFlash;
+    public Animator ShotgunMuzzleFlash;
 
     private void Start()
     {
@@ -151,25 +156,51 @@ public class Weapon : MonoBehaviour
     private void AnimHandler()
     {
         //Deals with m4 muzzle flash animation
-        if(Input.GetButton("Fire1") && weapons[1])
+        if(Input.GetButton("Fire1") && weapons[1] && (currentWeapon == 1))
         {
             rifleMuzzleFlash.SetActive(true);
             MuzzleFlash.ResetTrigger("NotShooting");
             MuzzleFlash.SetTrigger("Shooting");
         }
         
-        //Deals with turning off Muzzle Flash animation possibly for all weapons
+
+        //Deals with turning off Muzzle Flash animation when not on current weapon
         if (Input.GetButtonUp("Fire1"))
         {
-            if(weapons[1])
+            if(weapons[1] && (currentWeapon != 1))
+            {
+                rifleMuzzleFlash.SetActive(false);
+                
+            }
+            if(weapons[1] && (currentWeapon == 1))
             {
                 rifleMuzzleFlash.SetActive(false);
                 MuzzleFlash.ResetTrigger("Shooting");
                 MuzzleFlash.SetTrigger("NotShooting");
             }
            
+
         }
+        
+
     }
+    IEnumerator RPGWaitTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        RPGMuzzleFlash.ResetTrigger("HasShot");
+        RPGMuzzleFlash.SetTrigger("HasNotShot");
+        RPGMuzzleFlashObject.SetActive(false);
+        
+    }
+
+    IEnumerator ShotgunWaitTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+        ShotgunMuzzleFlash.ResetTrigger("ShotgunShot");
+        ShotgunMuzzleFlash.SetTrigger("NoShotgunShot");
+        ShotgunMuzzleFlashObject.SetActive(false);
+    }
+
     //sets up our boolean array for weapon handling
     private void initializeWepScene()
     {
@@ -230,7 +261,7 @@ public class Weapon : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("RifleBulletSound");
             M4Animator.SetTrigger("Shoot");
-            
+           
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             lastShot = Time.time;
 
@@ -276,22 +307,29 @@ public class Weapon : MonoBehaviour
         transform.GetChild(1).GetChild(4).gameObject.SetActive(false);
 
         AimHandler();
+        
         if(Input.GetButtonDown("Fire1"))
         {
+            
             RPGShoot();
+            
         }
     }
     private void RPGShoot()
     {
         if (Time.time > rpgFireRate + lastShot)
         {
+            RPGMuzzleFlashObject.SetActive(true);
+            RPGMuzzleFlash.SetTrigger("HasShot");
             RPGAnimator.SetTrigger("Shoot");
             Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
             FindObjectOfType<AudioManager>().Play("RocketLaunch");
             lastShot = Time.time;
-            
+            StartCoroutine(RPGWaitTime());
+
         }
     }
+   
 
     //======================================================================================
 
@@ -321,6 +359,8 @@ public class Weapon : MonoBehaviour
             Quaternion newRotation = firePoint.rotation;
             float spread = 1;
             ShotgunAnimator.SetTrigger("Shoot");
+            ShotgunMuzzleFlashObject.SetActive(true);
+            ShotgunMuzzleFlash.SetTrigger("ShotgunShot");
             FindObjectOfType<AudioManager>().Play("ShotgunSound");
             for (int i = 0; i < bulletCount; i++)
             {
@@ -332,6 +372,7 @@ public class Weapon : MonoBehaviour
                 Instantiate(pellet, firePoint.position, newRotation);
             }
             lastShot = Time.time;
+            StartCoroutine(ShotgunWaitTime());
         }
     }
     //======================================================================================
@@ -368,6 +409,8 @@ public class Weapon : MonoBehaviour
 
         }
     }
+
+   
     private void AimHandler()
     {
         Vector3 mousePos = GetMouseWorldPosition();
@@ -380,8 +423,12 @@ public class Weapon : MonoBehaviour
             localScale.y = -1f;
         else
             localScale.y = +1f;
-
+        
         transform.localScale = localScale;
+
+        aimDirection = (mousePos - transform.position).normalized;
+        angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        firePoint.eulerAngles = new Vector3(0, 0, angle);
 
     }
     
@@ -410,6 +457,7 @@ public class Weapon : MonoBehaviour
             //set index 1 in boolean array to true, giving us m4 access
             weapons[1] = true;
             weaponUI.transform.Find("M4Icon").gameObject.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("RiflePickUp");
             Destroy(collision.gameObject);
         }
         //If we run into RPG pickup
@@ -417,21 +465,21 @@ public class Weapon : MonoBehaviour
         {
             weapons[2] = true;
             weaponUI.transform.Find("RPGIcon").gameObject.SetActive(true);
-            
+            FindObjectOfType<AudioManager>().Play("RocketPickUp");
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Shotgun"))
         {
             weapons[3] = true;
             weaponUI.transform.Find("ShotgunIcon").gameObject.SetActive(true);
-
+            FindObjectOfType<AudioManager>().Play("ShotgunPickUp");
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Grenade"))
         {
             weapons[4] = true;
             weaponUI.transform.Find("GrenadeIcon").gameObject.SetActive(true);
-
+            FindObjectOfType<AudioManager>().Play("GrenadePickUp");
             Destroy(collision.gameObject);
         }
 
