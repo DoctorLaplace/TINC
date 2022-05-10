@@ -62,6 +62,7 @@
      <Compile Include="Assets\SFX\Particle_Auto_Destroy.cs" />
      <Compile Include="Assets\Camera_Bias_Anchor.cs" />
      <Compile Include="Assets\Entity.cs" />
+     <Compile Include="Assets\missle.cs" />
      <Compile Include="Assets\Lives.cs" />
      <Compile Include="Assets\Dynamic Objects\JumpPads\JumpPadSmall.cs" />
      <Compile Include="Assets\Dynamic Objects\Weapons\Grenade.cs" />
