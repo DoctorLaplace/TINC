@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tick: 0
   music_controller: {fileID: 0}
-  next_mission_name: Level_3
+  next_mission_name: Level_3_Alt
 --- !u!1 &865460533
 GameObject:
   m_ObjectHideFlags: 0
